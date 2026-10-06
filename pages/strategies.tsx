@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import { strategies } from '@/lib/data';
+import { DemoBadge, Shell } from '@/components/Shell';
+export default function Strategies() { return <Shell><main><div className="page-title"><div><div className="eyebrow">Strategy engine / presets</div><h1>Make the complex legible.</h1><p>Each preset is a product decision translated into compatible launch settings. The production adapter will validate the final configuration against the selected DBC config key.</p></div><DemoBadge /></div><div className="strategy-grid">{strategies.map((strategy) => <article className="strategy-card" key={strategy.id}><span className="strategy-tag">{strategy.category} assets</span><h3>{strategy.name}</h3><p>{strategy.description}</p><div className="strategy-bottom"><span>{strategy.style}</span><Link className="trade-link" href={`/create?strategy=${strategy.id}`}>Use strategy ↗</Link></div></article>)}</div></main></Shell>; }
